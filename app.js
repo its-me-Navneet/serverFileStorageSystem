@@ -259,6 +259,9 @@ app.post("/getReqForm",(req,res)=>{
         })
 })
 
+app.get("/",(req,res)=>{
+    return res.json(({message:"hello"}))
+})
 
 server=app.listen(port, () => {
     console.log(`server at port ${port}` );
