@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const app = express();
 app.use(express.json());
@@ -11,7 +12,7 @@ const ConfirmForm=require('./models/ConfirmForm');
 const jwt=require('jsonwebtoken');
 const checkAuth=require('./checkAuth')
 const db = "mongodb+srv://navneet:navneet123@cluster0.srpvfu9.mongodb.net/?retryWrites=true&w=majority"; 
-const port =process.env.port || 8000;
+const port =process.env.PORT || 8000;
 app.post("/",(req,res)=>{
     const {email,password}=req.body;
     // console.log(password);
