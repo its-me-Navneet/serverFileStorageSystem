@@ -90,7 +90,7 @@ app.post("/saveConfirmFile",checkAuth,(req,res)=>{
     data.save();
     return res.json({ message: "Success" });
 })
-app.post("/findUsers",(req,res)=>{
+app.get("/findUsers",(req,res)=>{
     user.find({})
         .then((exist) => {
             if (exist) {
