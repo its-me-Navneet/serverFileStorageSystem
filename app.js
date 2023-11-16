@@ -8,10 +8,10 @@ const user = require('./models/user');
 const SavedFiles = require('./models/SavedFiles');
 const SavedForm=require('./models/SaveForm');
 const ConfirmForm=require('./models/ConfirmForm');
-
+require("./db");
 const jwt=require('jsonwebtoken');
 const checkAuth=require('./checkAuth')
-const db = "mongodb+srv://navneet:navneet123@cluster0.srpvfu9.mongodb.net/?retryWrites=true&w=majority"; 
+// const db = "mongodb+srv://navneet:navneet123@cluster0.srpvfu9.mongodb.net/?retryWrites=true&w=majority"; 
 const port =process.env.PORT || 8000;
 app.post("/",(req,res)=>{
     const {email,password}=req.body;
@@ -263,9 +263,9 @@ app.get("/",(req,res)=>{
     return res.json(({message:"hello"}))
 })
 
-server=app.listen(port, () => {
-    console.log(`server at port ${port}` );
-});
-mongoose.connect(db, ()=>{
-    console.log("connected");
-})
+// server=app.listen(port, () => {
+//     console.log(`server at port ${port}` );
+// });
+// mongoose.connect(db, ()=>{
+//     console.log("connected");
+// })
